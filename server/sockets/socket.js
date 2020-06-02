@@ -4,10 +4,10 @@ const { io } = require('../server');
 
 io.on('connection', (client) => {
 
-    console.log('Backend: online');
+    console.log('Server: online');
 
     client.on('disconnect', () => {
-        console.log('Backend: user-disconnected');
+        console.log('Server: user-disconnected');
     });
 
     // Se recibe o escucha mensaje del usuario

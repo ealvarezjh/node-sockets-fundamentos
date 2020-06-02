@@ -2,12 +2,12 @@ var socket = io();
 
 // on: escuchar
 socket.on('connect', function() {
-    console.log('frotend: online');
+    console.log('Usuario: online');
 });
 
 
 socket.on('disconnect', () => {
-    console.log('frontend: disconnected');
+    console.log('Usuario: disconnected');
 });
 
 
@@ -18,11 +18,11 @@ socket.emit('sendMsg', {
     msg: 'Mensaje personalizado desde el cliente'
 
 }, function(resp) {
-    console.log('respuesta: ', resp);
+    console.log('Server: ', resp);
 });
 
 
 // escuchar mensaje proveniente del servidor
 socket.on('sendMsgToUser', (message) => {
-    console.log('Backend envía: ', message);
+    console.log('Server: ', message);
 });
